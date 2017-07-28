@@ -1,0 +1,29 @@
+
+<head>\n<!-- load module in page head -->\n<script src=\"codebox.js\"></script>
+</head>
+<body>
+	<div id=\"sourceElement\">...markup markup markup...</div>
+	<div id=\"targetElement\"></div>
+	<!-- after relevant elements are created, get element content, parse it, and place result in another element -->
+	<script>Codebox.convertContent(document.getElementById('sourceElement'),document.getElementById('targetElement'));</script>
+</body>
+
+<head>
+	<!-- load module in page head -->
+	<script src=\"codebox.js\"></script>
+</head>
+<body>
+	<div id=\"element\">...markup markup markup...</div>
+	<!-- after relevant element is created, get element content and replace it with its parsed result -->
+	<script>Codebox.convertContent(document.getElementById('element'));</script>
+</body>
+
+<head>
+	<!-- load module in page head -->
+	<script src=\"codebox.js\"></script>
+</head>
+<body>
+	<div id=\"element\">...markup markup markup...</div>
+	<!-- parse a string and get the result -->
+	<script>document.getElementById('element').innerHTML=Codebox.convertString(document.getElementById('element').innerHTML);</script>
+</body>...

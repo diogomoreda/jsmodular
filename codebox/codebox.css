@@ -1,0 +1,60 @@
+pre.converted-code{
+	font-family: monospace;
+	background-color: #fff;
+	padding: 0.5em;
+	padding-left:4em;
+	line-height: 0;
+	font-size: 1rem;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	border-left:3px solid #00F;
+	background-color:#FEFEFF;
+	overflow-x:scroll;
+}
+pre.converted-code code{
+	position:relative;
+	
+}
+pre.converted-code code span{
+	   	
+}
+pre.converted-code code span.lines{
+	display:block;
+	position:absolute;
+	width:3em;
+	height:auto;
+	top:0;
+	left:-4em;
+	border-right:1px solid #999;	
+}
+pre.converted-code code span.lines span{
+	display:block;
+	position:relative;
+	line-height: 1.5;
+	width:80%;
+	text-align:right;
+	color: #999;
+}
+
+
+pre.converted-code .bracket,
+pre.converted-code .quote,
+pre.converted-code .equal,
+pre.converted-code .slash{
+	color:#0000FF;
+}
+pre.converted-code .tagname{
+	color:#0000FF;
+}
+pre.converted-code .attribute{
+	color:#FF0000;
+}
+pre.converted-code .value{
+	color:#444444;
+}
+pre.converted-code .content{
+	color:#000000;
+}

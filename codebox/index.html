@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+	<title>Code Box Conversion</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, text-size=normal" />
+	<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+	<meta name="author" content="Diogo Moreda">
+	
+	
+	<link rel="stylesheet" href="codebox.css" type="text/css" media="all" />
+	<script src="codebox.mod.js"></script>
+	<script>
+	window.onload = function()
+	{
+		var codeContentElement = document.getElementById('code-content'),
+			outputElement = document.getElementById('output'),
+			exampleElement = document.getElementById('example');
+		
+		document.getElementById('bt-convert').onclick = function()
+		{
+			Codebox.convertContent(codeContentElement,outputElement);
+			Codebox.convertContent(codeContentElement,exampleElement);
+		}
+		document.getElementById('bt-clear').onclick = function()
+		{
+			codeContentElement.value = '';
+			outputElement.value = '';
+			exampleElement.innerHTML = '';
+		}
+	}
+	</script>
+</head>
+<body>
+	<h1>Code Box Markup generator</h1>
+	<div>
+		<p>Enter your code Here:</p>
+		<textarea id="code-content" style="width:100%;min-height:200px;"></textarea>
+		<button id="bt-convert" type="button" value="convert">convert</button>
+		<button id="bt-clear" type="button" value="clear">clear</button>
+		<textarea id="output" style="width:100%;min-height:200px;"></textarea>
+		<p>example:</p>
+		<div id="example"></div>
+		<p><a href="codebox.html">see an outside example here.</a></p>
+	</div>
+</body>
+</html>

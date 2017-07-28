@@ -1,0 +1,51 @@
+{
+"moduleName"		: "Codebox",
+"moduleFilename"	: "codebox.js",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "05-August-2016",
+"moduleUpdated"		: "26-July-2017",
+"moduleStyles"		: ["codebox.css"],
+"moduleDependencies": [],
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"convertString",
+		"methodDescription"	:"Takes a string of HTML markup and returns the parsed HTML code.",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"content",
+					"argumentType"			:"string",
+					"argumentDescription"	:"a string of markup to be parsed"
+				}
+			]
+		},
+		{
+		"methodName"		:"convertContent",
+		"methodDescription"	:"Parses the content of an HTML element and places the parsed result as the content of another element. ",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"sourceElement",
+					"argumentType"			:"HTML element reference",
+					"argumentDescription"	:"The source element that holds the content to be parsed. This will be fetched using either .innerHTML or .value attributes."
+				},
+				{	
+					"argumentName"			:"targetElement[optional]",
+					"argumentType"			:"HTML element reference",
+					"argumentDescription"	:"The target element that will hold the parsed result as its content. if ommited, the target element is assumed to be the sourceElement and a content replacement is performed instead."
+				}
+			]
+		}
+	],
+"moduleDescription"	: "Codebox performs HTML parsing in order to display HTML markup code in a webpage. The parser identifies and wraps every relevant HTML character inside new HTML elements, so that each character of the original code can be displayed.",
+"moduleApplication": "Load module in page head using <script> tags. When handling elements, make sure they exist before applying any module methods.",
+"moduleExternalExamples":
+	[
+		"index.html",
+		"examples.txt",
+		"codebox.html"
+	]
+}
