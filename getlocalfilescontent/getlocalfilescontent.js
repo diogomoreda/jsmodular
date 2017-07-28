@@ -1,4 +1,4 @@
-// 	Gets the content from any file or list of files located in the local server.
+// 	Getting local files content like taking candy from a baby!
 //
 //
 //
@@ -136,6 +136,7 @@ var GetLocalFilesContent = (function()
 		output = [];
 	};
 	
+	
 	// CALLBACKS - process is finished
 	
 	// function reference to be called inside the finishCallback() method 
@@ -144,9 +145,9 @@ var GetLocalFilesContent = (function()
 	// private method - called every time the list finishes loading
 	var finishCallback = function(output)
 	{
-		var progress = getProgress();
+		var output = getOutput();
 		
-		customFinishCallback(progress);	
+		customFinishCallback(output);	
 	};
 	
 	// publicly aliased method - set a function to be called every time the list finishes loading

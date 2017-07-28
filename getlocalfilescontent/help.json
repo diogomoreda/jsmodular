@@ -1,0 +1,75 @@
+{
+"moduleName"		: "GetLocalFilesContent",
+"moduleFilename"	: "getlocalfilescontent",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "12-Feb-2015",
+"moduleUpdated"		: "28-May-2017",
+"moduleStyles"		: [],
+"moduleDependencies": [],
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"add",
+		"methodDescription"	:"Adds files to the content load list",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"filePath",
+					"argumentType"			:"string|array",
+					"argumentDescription"	:"a string or array of strings containing filepaths"
+				}
+			]
+		},
+		
+		{
+		"methodName"		:"get",
+		"methodDescription"	:"Fetches and returns the output array that contains objects with the contents of each loaded file until this point",
+		"methodReturns"		:"array containing objects with the name and content of each file: {name:'file name' content:'file content'}", 
+		"methodArguments"	: []
+		},
+		
+		{
+		"methodName"		:"reset",
+		"methodDescription"	:"Reinitializes/clears the output array.",
+		"methodReturns"		:"", 
+		"methodArguments"	: []
+		},
+		
+		{
+		"methodName"		:"progress",
+		"methodDescription"	:"returns a percentage value of the current loading progress of the file content load list",
+		"methodReturns"		:"percentage value of loading progress", 
+		"methodArguments"	: []
+		},
+		
+		{
+		"methodName"		:"setUpdateCallback",
+		"methodDescription"	:"sets up a function to be called every time a loading update event is generated. ",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"fn",
+					"argumentType"			:"function",
+					"argumentDescription"	:"function to be called on every update event. The current loading progress value is passed to this function when invoked."
+				}
+			]
+		},
+		
+		{
+		"methodName"		:"setFinishCallback",
+		"methodDescription"	:"sets up a function to be called every time the list finishes loading. ",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"fn",
+					"argumentType"			:"function",
+					"argumentDescription"	:"function to be called on every list loading finished event. The output array value is passed to this function when invoked."
+				}
+			]
+		}
+	],
+"moduleDescription"	: "Get the content of files stored in your server without ajax. A file path or list of file paths is passed and added to a queue that uses an invisible iframe to load the files content sequentially. This queue behaves like a ring buffer. Loading progress can be monitored by passing a function that will be called on every update load event. The progress value is made available to this function through one passed argument. Loading finished can be monitored by passing a function that will be called when this event occurs. The output list is made to this function by passing an argument. The output list is an array of objects with the structure: {name:'file name extracted from filepath', content:'string with file content'}"
+}

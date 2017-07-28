@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<title>Get Local Files Content - example</title>
 	
-	<script src="getlocalfilescontent.min.js"></script>
+	<script src="getlocalfilescontent.js"></script>
 	<script>
 	var list = ['files/html-file-example.html','files/txt-file-example.txt','files/css-file-example.css'];
 	
@@ -13,12 +13,8 @@
 		console.log('update callback '+progress);
 	});
 	
-	GetLocalFilesContent.setFinishCallback(function(progress)
+	GetLocalFilesContent.setFinishCallback(function(output)
 	{
-		var output = GetLocalFilesContent.get();
-		
-		console.log(output);
-		
 		var buffer = '<ul>';
 		for(var i=0; i<output.length; i++)
 		{

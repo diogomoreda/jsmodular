@@ -1,0 +1,49 @@
+{
+"moduleName"		: "",
+"moduleFilename"	: "",
+"moduleAuthor"		: "",
+"moduleDate"		: "",
+"moduleUpdated"		: "",
+"moduleStyles"		: [""],
+"moduleDependencies": ["","",],
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"",
+		"methodDescription"	:"",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"",
+					"argumentType"			:"",
+					"argumentDescription"	:""
+				},
+				{	
+					"argumentName"			:"",
+					"argumentType"			:"",
+					"argumentDescription"	:""
+				}
+			]
+		},
+		{
+		"methodName"		:"",
+		"methodDescription"	:"",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"",
+					"argumentType"			:"",
+					"argumentDescription"	:""
+				},
+				{	
+					"argumentName"			:"",
+					"argumentType"			:"",
+					"argumentDescription"	:""
+				}
+			]
+		}
+	],
+"moduleDescription"	: ""
+}
