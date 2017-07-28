@@ -1,8 +1,3 @@
-// 	Getting local files content like taking candy from a baby!
-//
-//
-//
-//CODE:
 var GetLocalFilesContent = (function()
 {
 	// set true to log every step into console
