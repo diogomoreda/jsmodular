@@ -1,0 +1,21 @@
+<li id="{{id}}" class="folder-item">
+	<div class="folder-label">
+		<div class="folder-state">
+			{folderui{
+			<a class="contract" title="contract folder"><span><strong>-</strong></span></a>
+			<a class="expand" title="expand folder"><span><strong>+</strong></span></a>
+			}}
+		</div>
+		<div class="folder-name">
+			<a title="{{title}}"><span>{{title}}</span></a>
+		</div>
+		<div class="folder-loading">
+			<div class="folder-load-animation">
+				<span class="anime-01">&#8226;</span>
+				<span class="anime-02">&#8226;</span>
+				<span class="anime-03">&#8226;</span>
+			</div>
+		</div>
+	</div>
+	{{children}}	
+</li>

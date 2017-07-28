@@ -1,0 +1,66 @@
+/*
+**	FOLDER MENU
+*/
+#folders{width:100%; background-color:transparent;}
+#folders ul{display:block; width:100%; padding:0; margin:0;}
+#folders li{display:block; width:100%; list-style-type:none; }
+#folders a {text-decoration:none;}
+
+
+.folder-item{ position:relative; border-top:1px dashed #BBB; }
+
+#folders>ul>li.folder-item{ border-top:1px solid #999; }
+	
+	.folder-label{position:relative; width:100%; height: 2.25em;}
+	
+	.folder-label:after{content:""; display:block; clear:both; height:0; font-size:0;}
+	
+		.folder-state{float:left; width:6%; height:100%;}
+				
+			.folder-state a{width:100%; height:100%;}
+			
+			.folder-state a.expand{display:block; background-color:#999; color:#FFF;}
+			
+			.folder-state a.contract{display:none; background-color:#EEE; color:#333;}
+			
+				.folder-state span{display:table; width:100%; height:100%; text-align:center;}
+			
+				.folder-state strong{display:inline-block; display:table-cell; vertical-align:middle; }
+			
+		.folder-name{float:left; width:94%; height:100%;}
+		
+			.folder-name a{display:table; width:95%; height:100%; padding-left:5%; color:#333;}
+		
+				.folder-name span{display:inline-block; display:table-cell; vertical-align:middle;}
+		
+		.folder-loading{ display:none; position:absolute; width:40px; min-width:40px; height:100%; right:0; top:0; bottom:0; overflow:hidden; background-color:#FFF; opacity:0.5; }
+		
+				.folder-loadarea{position:relative;  width:100%; height:100%;background-color:#FFF; opacity:0.5;}
+				
+					.folder-load-animation{display:table; text-align:center; width:70%; margin-left:15%; height:100%; max-height:100%;}
+					
+						.folder-load-animation span{display:inline-block;display:table-cell;vertical-align:middle;color:#333;}
+				
+	.folder-children{display:none; width:94%; margin-left:6%;}
+
+li.folder-item.expanded > .folder-label > .folder-state > .contract{display:block;}
+li.folder-item.expanded > .folder-label > .folder-state > .expand{display:none;}
+li.folder-item.loading > .folder-label > .folder-loading{display:block;}
+li.folder-item.expanded > .folder-children{display:block;}
+
+li.folder-item.selected > .folder-label >.folder-name > a{background-color:#333; color:#F0F0F0;}
+
+.anime-01,.anime-02,.anime-03 {
+  animation-duration: 1.5s;
+  animation-name: loading-animation;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+.anime-02 {	animation-delay: 0.5s;	}
+.anime-03 {	animation-delay: 1.0s;	}
+
+@keyframes loading-animation{
+	0%,100%{ font-size: 1em; line-height:1em;}
+	50%{ font-size: 1.8em; line-height:1em;}
+}
+			
