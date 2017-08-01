@@ -71,5 +71,8 @@
 			]
 		}
 	],
-"moduleDescription"	: "Get the content of files stored in your server without ajax.\n A file path or list of file paths is passed and added to a queue that uses an invisible iframe to load the files content sequentially. This queue behaves like a ring buffer.\n Loading progress can be monitored by passing a function that will be called on every loading update event. The progress value is made available to this function through one passed argument.\n Loading finished can be monitored by passing a function that will be called when this event occurs. The output list is made to this function by passing an argument.\n The output list is an array of objects with the structure: {name:'file name extracted from filepath', content:'string with file content'}\n The module is only useful after the body exists in the DOM otherwise there is no container to append the iframe."
+"moduleDescription"	: 
+	[
+		"Get the content of files stored in your server without ajax.\n A file path or list of file paths is passed and added to a queue that uses an invisible iframe to load the files content sequentially. This queue behaves like a ring buffer.\n Loading progress can be monitored by passing a function that will be called on every loading update event. The progress value is made available to this function through one passed argument.\n Loading finished can be monitored by passing a function that will be called when this event occurs. The output list is made to this function by passing an argument.\n The output list is an array of objects with the structure: {name:'file name extracted from filepath', content:'string with file content'}\n The module is only useful after the body exists in the DOM otherwise there is no container to append the iframe."
+	]	
 }

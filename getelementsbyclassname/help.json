@@ -1,0 +1,39 @@
+{
+"moduleName"		: "GetElementsByClassName",
+"moduleFilename"	: "getelementsbyclassname",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "19-Nov-2016",
+"moduleUpdated"		: "",
+"moduleStyles"		: [],
+"moduleDependencies": [],
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"parseElementClassName",
+		"methodDescription"	:"self invoking function called with module namespace",
+		"methodReturns"		:"array with collection of HTML element references that have a class name that matches the provided argument.", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"value",
+					"argumentType"			:"string",
+					"argumentDescription"	:"the class name to be looked for."
+				},
+				{	
+					"argumentName"			:"target[optional]",
+					"argumentType"			:"HTML element reference",
+					"argumentDescription"	:"a parent element where its children are searched for the class name provided as argument"
+				}
+			]
+		}
+	],
+"moduleDescription"	: 
+	[
+		"Custom function to replace the getElementsByClassName native DOM method when not available;",
+		"To use just include this script using a script tag in the page header: ",
+		"<script src=\"../js/getelementsbyclassname/getelementsbyclassname.js\"></script>",
+		"",
+		"And use it like:",
+		"(document.getElementsByClassName)? document.getElementsByClassName('myclass')[0] : GetElementsByClassName('myclass')[0];"
+	]
+}

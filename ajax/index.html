@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+	<title>Ajax module</title>
+	
+	<script src="ajax.min.js"></script>
+	<script>
+	var successCallback = function(data)
+	{
+		var b = document.body || document.getElementsByTagName('body')[0];
+		b.innerHTML = '<div>Ajax response: '+data+'</div>';
+	}
+	Ajax.request('ajax_test.php', {var1:'varone',var2:'vartwo'}, successCallback, null, 'POST', false);
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

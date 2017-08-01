@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Curly Templates - example</title>
+	
+	<style>textarea{width:100%; height:100px;}</style>
+	
+	<script src="../curlytemplates/curlytemplates.min.js"></script>
+	
+	<script>
+	var templateElement,rawHtmlElement,bt,template,modelData;
+	
+	window.onload = function()
+	{
+		template = '<empty>{templateA{<a id="{{a}}">{templateB{<b>{templateC{<c><d>{{d}}</d></c>}}<x></x>{templateX{<x></x>}}</b>}}</a>}}</empty>{{templateA}}';
+		
+		modelData = {a:'elementA_ID', d:'Hello World'};
+		
+		templateElement = document.getElementById('template');
+		templateElement.innerHTML = template;
+		
+		rawHtmlElement = document.getElementById('rawHtml');
+		rawHtmlElement.innerHTML = CurlyTemplates.parse(template, modelData);
+		
+		bt = document.getElementById('bt');
+		bt.onclick = function()
+		{
+			console.log(templateElement.value);
+			rawHtmlElement.innerHTML = CurlyTemplates.parse(templateElement.value);
+		}
+	};
+	</script>
+	
+</head>
+<body>
+	<strong>Curly Template</strong>
+	<textarea id="template" style="width:100%; min-height:100px;">'+template+'</textarea>
+	
+	<button id="bt" value="parse">parse</button><br/>
+	
+	<strong>raw HTML</strong>
+	<textarea id="rawHtml" style="width:100%; min-height:100px;">'+CurlyTemplates.parse(template, modelData)+'</textarea>'
+	
+</body>
+</html>

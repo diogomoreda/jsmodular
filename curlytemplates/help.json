@@ -1,0 +1,51 @@
+{
+"moduleName"		: "CurlyTemplates",
+"moduleFilename"	: "curlytemplates.js",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "10-jul-2017",
+"moduleUpdated"		: "",
+"moduleStyles"		: [],
+"moduleDependencies": [],
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"parse",
+		"methodDescription"	:"parses a CurlyTemplates formatted string and outputs its raw HTML.",
+		"methodReturns"		:"a string containing the parsed html code", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"template[optional]",
+					"argumentType"			:"string",
+					"argumentDescription"	:"Curly Template Formatted string"
+				},
+				{	
+					"argumentName"			:"modelData",
+					"argumentType"			:"object",
+					"argumentDescription"	:"object with property values with names to match those inside the template {{variable}} blocks"
+				}
+			]
+		}
+	],
+"moduleDescription"	: 
+	[
+		"Used to parse strings of HTML written in Curly Templates format and outputs regular HTML;",
+		"The Curly Templates format has 2 types of possible data that the parser will search and replace:",
+		"{{variable}}",
+		"a variable is a string written inside a pair of curly brackets using alphanumeric and underscore characters like: {{some_name}}",
+		"It can be written anywhere inside the template's HTML: ",
+		"...<div id=\"mydiv\" class=\"{{mydiv_class}}\">{{mydiv_content}}</div>...",
+		"The variable replacement value will be either: ",
+		"-	a property with the same name as the one inside the curly brackets defined inside the object passed as the argument 'modelData' to the .parse method.",
+		"-	the markup of a subtemplate that was defined prior to this parsing point.",
+		"{subtemplate{}}",
+		"a subtemplate is a piece of HTML or plain text written inside a pair of curly brackets.",
+		"Each subtemplate must be defined by a unique name written using alphanumeric and underscore ",
+		"characters, in between the 1st and 2nd opening curly brackets.",
+		"The subtemplate content is defined only after the 2nd opening curly bracket like: ",
+		"...</div>{subtemplate_name{subtemplate HTML content}}<span>some stuff</span>...",
+		"The subtemplate markup will be added to the output markup at the same point it is parsed,",
+		"and will also be held in memory to later replace any {{variable}} found ahead in the template.",
+		"subtemplates may be defined inside other subtemplates to replace parts of the parent subtemplate."
+	]
+}

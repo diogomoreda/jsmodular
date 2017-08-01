@@ -24,6 +24,8 @@ var GetLocalFilesContent = (function()
 	// reference to document body
 	var b;
 	
+	var jsonFlag = false;
+	
 	
 	// iframe element that will load and fetch the file content
 	var fileLoader = document.createElement('iframe');
@@ -33,9 +35,14 @@ var GetLocalFilesContent = (function()
 			// for name: extract the filename from the url and exclude its extension
 			// for content: remove every line break and whitespace characters
 			output.push(
-				{	name 	: 	this.src.match(/([^\/]+)(?=\.\w+$)/)[0].replace(/[^\w]+/g, '_'), 
+				{	name 	: 	this.src,//this.src.match(/([^\/]+)(?=\.\w+$)/)[0].replace(/[^\w]+/g, '_'), 
 					content	:	this.contentWindow.document.body.innerHTML.replace(/\r?\n|\r|\t/g,'')
 				});
+			
+			if (jsonFlag) output[output.length-1].content = output[output.length-1].content.replace(/<pre[^>]*>/g,'').replace(/<\/pre>/g,'');
+			
+			//console.log(output[output.length-1].content);
+			
 			loadNext();
 		};
 		fileLoader.onerror = function()
@@ -67,6 +74,9 @@ var GetLocalFilesContent = (function()
 		// call loading update callback
 		updateCallback();
 		
+		// disable json parsing
+		jsonFlag = false;
+		
 		// load queue
 		loadQueue();
 	};
@@ -88,6 +98,9 @@ var GetLocalFilesContent = (function()
 		}
 		// set loading status to true
 		loadingStatus = true;
+		
+		// check if file is json to enable special parsing requirements
+		if(list[0].indexOf('.json') != -1) jsonFlag = true;
 		
 		// start loading first image in array
 		fileLoader.src = list[0];
@@ -138,7 +151,7 @@ var GetLocalFilesContent = (function()
 	var customFinishCallback = function(){};
 	
 	// private method - called every time the list finishes loading
-	var finishCallback = function(output)
+	var finishCallback = function()
 	{
 		var output = getOutput();
 		

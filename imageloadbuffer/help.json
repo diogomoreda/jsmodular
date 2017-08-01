@@ -1,0 +1,105 @@
+{
+"moduleName"		: "ImageLoadBuffer",
+"moduleFilename"	: "imageloadbuffer.js",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "12-05-2017",
+"moduleUpdated"		: "",
+"moduleStyles"		: [],
+"moduleDependencies": [],
+"moduleMethods"		: 
+	[
+		{
+		"methodName"		:"load",
+		"methodDescription"	:"Adds image files to the loading queue. Several types of data may be provided to this method. Alternatively the user may provide: an array of image file source strings; an array of objects with the same structure as the one described in method arguments ex: {src:'',ref:'',loadClass:'',errorClass:''}; or an array of arrays with index values matching the same order as described in method arguments [0:'src',1:'ref',2:'loadClass',3:'errorClass']",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"src",
+					"argumentType"			:"string",
+					"argumentRequired"		:"true",
+					"argumentDescription"	:"an image file source path"
+				},
+				{	
+					"argumentName"			:"ref",
+					"argumentType"			:"HTML DOM element reference",
+					"argumentRequired"		:"false",
+					"argumentDescription"	:"The element that will contain the image once it is downloaded. If class names are provided, this will be the target element that will receive them"
+				},
+				{	
+					"argumentName"			:"loadClass",
+					"argumentType"			:"string",
+					"argumentRequired"		:"false",
+					"argumentDescription"	:"a class name to be appended to the element once its respective image file finishes downloading"
+				},
+				{	
+					"argumentName"			:"errorClass",
+					"argumentType"			:"string",
+					"argumentRequired"		:"false",
+					"argumentDescription"	:"a class name to be appended to the element when its respective image file generates a download error"
+				}
+			]
+		},
+		{
+		"methodName"		:"get",
+		"methodDescription"	:"return the ouptut array containing all loaded objects(objects containing an image file source that has finished downloading)",
+		"methodReturns"		:"an array containing all loaded objects", 
+		"methodArguments"	: []
+		},
+		{
+		"methodName"		:"reset",
+		"methodDescription"	:"resets the output array to an empty state. useful when controlling the download of several groups of images",
+		"methodReturns"		:"", 
+		"methodArguments"	: []
+		},
+		{
+		"methodName"		:"progress",
+		"methodDescription"	:"gives the current progress of the loading queue",
+		"methodReturns"		:"The progress value of the loading queue in a percentage", 
+		"methodArguments"	: []
+		},
+		{
+		"methodName"		:"setUpdateCallback",
+		"methodDescription"	:"receives an external function that will be called every time the queue gets updated. The variable progress is passed to the callback.",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"fn",
+					"argumentType"			:"function",
+					"argumentRequired"		:"true",
+					"argumentDescription"	:"The function to be called on every queue update. To do nothing just pass an empty function"
+				}
+			]
+		},
+		{
+		"methodName"		:"setFinishCallback",
+		"methodDescription"	:"receives an external function that will be called every time the queue finishes downloading all files and gets empty. The output array is passed to the callback containing the image objects of the respective downloaded file sources.",
+		"methodReturns"		:"", 
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"fn",
+					"argumentType"			:"function",
+					"argumentRequired"		:"true",
+					"argumentDescription"	:"The function to be called on every queue finished event. To do nothing just pass an empty function"
+				}
+			]
+		}
+	],
+"moduleDescription"	: 
+	[
+		"Image Load Buffer provides users with methods to control and monitor image file downloading and pre loading in a web page.",
+		"Input is provided by passing at least one image file source string. User input is parsed into an object and pushed into a queue that loads its contents sequentially avoiding parallel download requests.",
+		"When an HTML DOM element reference is provided as an input argument along with the image file source, once the respective file source finishes downloading it is inserted into that element either by setting its source attribute(if the element is an <img>), or setting its background-image CSS rule(if it is anything else).",
+		"Additionally, 2 string arguments may be also passed along, containing class names to be added to the element when the image file source finishes downloading or downloading results in an error.",
+		"Every time an image from the queue finishes downloading, the queue gets updated and a callback method is called. The current progress of the queue is passed to the callback as a percentage value.",
+		"Every time the queue gets empty(no more files to load), a callback function is called and a list of all loaded objects is passed as an argument.",
+		"Loaded objects, or objects whose file source string is downloaded, are pushed to an output array. To control the loading of a group of image files, the output array should be reset before pushing the group to the queue, otherwise objects will simply accumulate.",
+		"The update and finish callbacks may be set by passing external functions to be called when this events occur."
+	],
+"moduleBrowsers"	: 
+	[
+		""
+	]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>get elements by classname sandbox</title>
+		<style>
+		html,body{margin:0;padding:0;width:100%;height:100%;}
+		</style>
+		<script src="getelementsbyclassname.js"></script>
+		<script>
+		window.onload = function()
+		{ 
+			var target;
+			if(document.getElementsByClassName)
+			{
+				console.log('native document.getElementsByClassName method used');
+				target = document.getElementsByClassName('myclass')[0];
+			}else{
+				console.log('custom getElementsByClassName function used');
+				target = getElementsByClassName('myclass', getElementsByClassName('noclass')[0])[0];
+			}
+			console.log(target.id);
+			
+		}	
+		</script>
+	</head>
+	<body>
+		
+		<div class="noclass">
+			<div id="content" class="myclass">
+				CTRL+SHIFT+i to open console and see the script output
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,56 @@
+{
+"moduleName"		: "Ajax",
+"moduleFilename"	: "ajax.js",
+"moduleAuthor"		: "Diogo Moreda",
+"moduleDate"		: "20-Mar-2016",
+"moduleUpdated"		: "29-Jul-2017",
+"moduleMethods": 
+	[
+		{
+		"methodName"		:"request",
+		"methodDescription"	:"produces an Ajax request with the passed arguments",
+		"methodArguments"	: 
+			[
+				{	
+					"argumentName"			:"scriptUrl",
+					"argumentType"			:"string",
+					"argumentDescription"	:"the path to the target script file"
+				},
+				
+				{	
+					"argumentName"			:"vars",
+					"argumentType"			:"object",
+					"argumentDescription"	:"object containing properties(name:value) that will be passed to the target script as variables. if none is desired, pass an empty object like: {}"
+				},
+				
+				{	
+					"argumentName"			:"success_callback",
+					"argumentType"			:"function",
+					"argumentDescription"	:"reference to a function that will be called when a request is terminated with success. The response data will be passed as an argument to this function call. If no function is required, pass null instead"
+				},
+				
+				{	
+					"argumentName"			:"fail_callback",
+					"argumentType"			:"function",
+					"argumentDescription"	:"reference to a function that will be called when a request is terminated with errors. The errors will be passed as an argument to this function call. If no function is required, pass null instead"
+				},
+				
+				{	
+					"argumentName"			:"requestMethod",
+					"argumentType"			:"string",
+					"argumentDescription"	:"either 'GET' or 'POST' are available. the default option is 'GET' which gets selected when null is passed to this argument."
+				},
+				
+				{	
+					"argumentName"			:"parseJson",
+					"argumentType"			:"boolean",
+					"argumentDescription"	:"set to true if the server response is a JSON valid string. This will parse the response into a json string before making it available in the success_callback method. default is false"
+				}
+			]
+		}
+	],
+"moduleDescription"	: 
+	[
+		"Generates asynchronous requests using AJAX by providing a simple wrapper method that is both simple and flexible."
+	]
+}

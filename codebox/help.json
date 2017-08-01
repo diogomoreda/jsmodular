@@ -40,5 +40,8 @@
 			]
 		}
 	],
-"moduleDescription"	: "Codebox performs HTML parsing in order to display HTML markup code in a webpage. The parser identifies and wraps every relevant HTML character inside new HTML elements, so that each character of the original code can be displayed in a browser."
+"moduleDescription"	: 
+	[
+		"Codebox performs HTML parsing in order to display HTML markup code in a webpage. The parser identifies and wraps every relevant HTML character inside new HTML elements, so that each character of the original code can be displayed in a browser."
+	]
 }

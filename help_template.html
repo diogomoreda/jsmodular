@@ -1,0 +1,68 @@
+<div>
+
+	<h2>{{moduleName}}</h2>
+
+	<ul>
+
+	<li><span>filename</span>		<span>{{moduleFilename}}</span></li>
+
+	<li><span>date</span>			<span>{{moduleDate}}</span></li>
+
+	<li><span>last updated</span>	<span>{{moduleUpdated}}</span></li>
+
+	<li><span>description</span>	<span>{{moduleDescription}}</span></li>
+
+	<li>
+		<span>stylesheets</span>
+		<div><ul>{stylesheets{<li>{{stylesheet}}</li>}}</ul></div>
+	</li>
+
+	<li>
+		<span>dependencies</span>
+		<div><ul>{dependencies{<li>{{dependency}}</li>}}</ul></div>
+	</li>
+
+	<li>
+		<span>methods</span>
+		<div>
+			<ul>
+				{method{
+				<li>
+					<div>
+						<ul>
+							<li><span>name</span><span>{{methodName}}</span></li>
+							<li><span>description</span><span>{{description}}</span></li>
+							<li><span>returns</span><span>{{returns}}</span></li>
+							<li><span>arguments</span>
+								<div>
+									<ul>
+										{argument{
+										<li>
+											<div>
+												<ul>
+													<li><span>name</span>		<span>{{argumentName}}</span></li>
+													<li><span>type</span>		<span>{{argumentType}}</span></li>
+													<li><span>required</span>	<span>{{argumentRequired}}</span></li>
+													<li><span>description</span><span>{{argumentDescription}}</span></li>
+												</ul>
+											</div>
+										</li>
+										}}
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				}}
+			</ul>
+		</div>
+	</li>
+
+	<li>
+		<span>Tested Browsers</span>
+		<div><ul>{browsers{<li>{{browser}}</li>}}</ul></div>
+	</li>
+
+	</ul>
+</div>

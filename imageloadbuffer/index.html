@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Image Load Buffer</title>
+		
+		<script src="imageloadbuffer.js"></script>
+		<script>
+		
+		var stringList = [
+			'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0331-1024x768.jpg',
+			'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0331-1200x900.jpg',
+			'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0331-177x142.jpg',
+			'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0331-768x576.jpg',
+			'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-1024x768.jpg'
+		];
+		
+		var objectList = [
+			{src:'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-1200x900.jpg',ref:null,loadClass:'loaded',errorClass:'error'},
+			{src:'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-600x450.jpg',ref:null,loadClass:'loaded',errorClass:'error'},
+			{src:'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-669x272.jpg',ref:null,loadClass:'loaded',errorClass:'error'},
+			{src:'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-768x576.jpg',ref:null,loadClass:'loaded',errorClass:'error'},
+			{src:'//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0605-1200x900.jpg',ref:null,loadClass:'loaded',errorClass:'error'}
+		];
+		
+		var arrayList = [
+			['//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-1200x900.jpg',null,'loaded','error'],
+			['//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-600x450.jpg',null,'loaded','error'],
+			['//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-669x272.jpg',null,'loaded','error'],
+			['//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0601-768x576.jpg',null,'loaded','error'],
+			['//www.casadaosga.com/wp-content/uploads/2017/06/IMG_0605-1200x900.jpg',null,'loaded','error']
+		];
+		
+		ImageLoadBuffer.setUpdateCallback(function(progress)
+		{
+			console.log('progress ', progress);
+		});	
+		
+		ImageLoadBuffer.setFinishCallback(function(output)
+		{
+			console.log('output', output);
+		});	
+		
+		
+		
+		window.onload = function()
+		{ 
+			ImageLoadBuffer.load(arrayList);
+		}	
+		</script>
+	</head>
+	<body>
+		
+		<div class="noclass">
+			<div id="content" class="myclass">
+				CTRL+SHIFT+i to open console and see the script output
+			</div>
+		</div>
+		
+	</body>
+</html>
